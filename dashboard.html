@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Welcome to the Dashboard!</h1>
+    <div id="loginDetails"></div>
+
+    <script>
+        // Function to extract query parameters from URL
+        function getQueryParams() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const email = urlParams.get('email');
+            return { email};
+        }
+
+        // Display login details on the page
+        const loginDetails = getQueryParams();
+        document.getElementById('loginDetails').innerHTML = `
+            <p>Email: ${loginDetails.email}</p>
+        `;
+    </script>
+</body>
+</html>
